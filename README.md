@@ -6,7 +6,7 @@
   - 5V
   - Pin #11
   - GND
-- LED (provides motion detection status)
+- (DISABLED) LED (provides motion detection status)
   - Pin #7
   - GND
 

@@ -17,7 +17,7 @@ const now = () => {
 }
 
 board.on('ready', () => {
-  const led = new five.Led('P1-7');
+  // const led = new five.Led('P1-7');
   const motionSensor = new five.Motion('P1-11');
 
   motionSensor.on('calibrated', () => {
@@ -26,7 +26,7 @@ board.on('ready', () => {
 
   motionSensor.on('motionstart', () => {
     console.log('MotionSensor - Motion Started', now());
-    led.on();
+    // led.on();
     
     fetch(`https://${cloudId}.connect.athom.com/api/manager/logic/webhook/Garage-Motion-Started`)
       .then((res) => {
@@ -41,7 +41,7 @@ board.on('ready', () => {
 
   motionSensor.on('motionend', () => {
     console.log('MotionSensor - Motion Ended', now());
-    led.off();
+    // led.off();
 
     fetch(`https://${cloudId}.connect.athom.com/api/manager/logic/webhook/Garage-Motion-Ended`)
       .then((res) => {
