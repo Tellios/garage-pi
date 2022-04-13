@@ -1,15 +1,16 @@
-const { env } = require('process');
+const process = require('process');
 
 const { RaspiIO } = require('raspi-io');
 const five = require('johnny-five');
 const fetch = require('node-fetch');
 
-const cloudId = env.CLOUD_ID;
+const cloudId = process.env.CLOUD_ID;
 
 console.log(`Cloud ID: ${cloudId}`);
 
 const board = new five.Board({
     io: new RaspiIO(),
+    repl: false,
 });
 
 const now = () => {
